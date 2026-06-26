@@ -9,9 +9,11 @@ A web app for printing proxy cards to test decks for the Shadowverse Evolve TCG.
 **Database:** PostgreSQL (Supabase)  
 **Infrastructure:** AWS S3
 
-## Features
+## Current Features
 - Search 5000+ cards by name
 - Add multiple copies of cards to your deck list
+
+## In Progress
 - Remove cards by clicking them
 - Ink-saver mode (grayscale)
 - Optional spacing between cards
