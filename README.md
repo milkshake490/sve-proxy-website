@@ -31,7 +31,3 @@ If you'd like a live demo or have questions about the project, feel free to reac
 ## Contact
 - **Email:** shaikmupasha@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/shaik-pasha-198975273/
-
-## Disclaimer
-Card images are copyright Cygames. This project is not affiliated
-with or endorsed by Cygames. For personal and casual play use only.
