@@ -18,6 +18,7 @@ A web app for printing proxy cards to test decks for the Shadowverse Evolve TCG.
 - Ink-saver mode (grayscale)
 - Optional spacing between cards
 - Print-ready 3-card grid layout
+- Need to add Gloryfinder cards and certain leaders that did not make it through
 
 ## How It Works
 1. Card images are scraped and watermarked with a Python script
