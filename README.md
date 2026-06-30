@@ -38,3 +38,8 @@ If you'd like a live demo or have questions about the project, feel free to reac
 ## Disclaimer
 Card images are copyright Cygames. This project is not affiliated
 with or endorsed by Cygames. For personal and casual play use only.
+
+
+![Homepage](Assets/website.png)
+![Homepage](Assets/search.png)
+![Homepage](Assets/displayCard.png)
