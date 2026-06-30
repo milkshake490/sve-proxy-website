@@ -12,12 +12,10 @@ SAVE_DIR = "all_cards_numbered"
 
 os.makedirs(SAVE_DIR, exist_ok=True)
 
-# -------------------------
-# THREADING / RATE LIMITING
-# -------------------------
+#Threading rate limiting
 lock = threading.Lock()
 last_request_time = 0
-RATE_LIMIT = 0.1  # ~10 requests/sec max
+RATE_LIMIT = 0.1  #10 requests/sec max
 
 headers = {
     "User-Agent": "Mozilla/5.0",
@@ -40,9 +38,7 @@ def rate_limited_get(url, headers):
     return requests.get(url, headers=headers, timeout=15)
 
 
-# -------------------------
-# SETS
-# -------------------------
+#Card Groups
 EXPANSIONS = [
     "BP01", "BP02", "BP03", "BP04", "BP05",
     "BP06", "BP07", "BP08", "BP09", "BP10",
@@ -64,9 +60,7 @@ PROMOS = [
 ALL_SETS = EXPANSIONS + STARTER_DECKS + PROMOS
 
 
-# -------------------------
-# FILENAME CLEANING
-# -------------------------
+#Filename cleaning
 def clean_filename(name):
     name = name.strip().lower()
     name = re.sub(r'[^a-z0-9 ]', '', name)
@@ -74,9 +68,7 @@ def clean_filename(name):
     return name
 
 
-# -------------------------
-# SCRAPE CARD LIST PAGE
-# -------------------------
+#Scrape card list page
 def get_cards(set_code, page):
     url = (
         f"{BASE_URL}/cards/searchresults_ex"
@@ -137,9 +129,7 @@ def get_cards(set_code, page):
         return []
 
 
-# -------------------------
-# DOWNLOAD CARD
-# -------------------------
+#Download card
 def download_card(card, seen):
     number = card["number"]
     name = clean_filename(card["name"])
@@ -171,9 +161,7 @@ def download_card(card, seen):
         print(f"Error downloading {filename}: {e}")
 
 
-# -------------------------
-# MAIN
-# -------------------------
+#Main
 seen = set()
 MAX_WORKERS = 10
 
@@ -189,7 +177,7 @@ with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
 
             cards = get_cards(set_code, page)
 
-            # No cards found
+            #No cards found
             if not cards:
                 print(f"{set_code}: Finished.")
                 break
@@ -206,7 +194,7 @@ with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
 
             page += 1
 
-            # Small pause between page fetches
+            #Small pause between page fetches
             time.sleep(0.3)
 
 print("\nAll sets completed.")

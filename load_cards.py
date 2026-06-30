@@ -52,18 +52,18 @@ for page in pages:
 
             count += 1
 
-            # Commit every 100 records
+            #Commit every 100 records
             if count % batch_size == 0:
                 conn.commit()
                 print(f"Processed {count} cards...")
 
         except Exception as e:
             print(f"ERROR on {filename}: {e}")
-            # Reconnect
+            #Reconnect
             conn = psycopg2.connect(os.getenv("DATABASE_URL"))
             cur = conn.cursor()
 
-# Final commit
+#Final commit
 conn.commit()
 cur.close()
 conn.close()
