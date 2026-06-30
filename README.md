@@ -27,6 +27,18 @@ A web app for printing proxy cards to test decks for the Shadowverse Evolve TCG.
 4. FastAPI serves a REST API with a debounced card search endpoint
 5. React frontend lets users build a card list and print it
 
+## Home Page
+Landing page where users can browse the application and begin searching for cards
+![Homepage](Assets/website.png)
+
+## Card Search
+Search for cards by name
+![Homepage](Assets/search.png)
+
+## Card Preview
+View a high resolution preview of the selected card 
+![Homepage](Assets/displayCard.png)
+
 ## Running Locally
 This project requires access to a private AWS S3 bucket and Supabase database.
 If you'd like a live demo or have questions about the project, feel free to reach out!
